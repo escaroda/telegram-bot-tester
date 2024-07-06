@@ -7,13 +7,17 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-    <input type="text" id="invoice_link" value="Enter invoice link">
-    <button onclick="showAlert()">Click me</button>
+    <input type="text" id="invoice_link" value="" placeholder="Invoice link">
+    <button onclick="openInvoice()">Open</button>
 
     <script>
-        function showAlert() {
-            const text = document.getElementById("invoice_link").value;
-            window.Telegram.WebApp.showAlert(text);
+        function openInvoice() {
+            const link = document.getElementById("invoice_link").value;
+            if (link) {
+                window.Telegram.WebApp.openInvoice(link, (e) => {
+                    window.Telegram.WebApp.showAlert(JSON.stringify(e));
+                });
+            }
         }
     </script>
 </body>
