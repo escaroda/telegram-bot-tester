@@ -12,11 +12,10 @@
 
     <script>
         function openInvoice() {
-            const link = document.getElementById("invoice_link").value;
-            if (link) {
-                window.Telegram.WebApp.openInvoice(link, (e) => {
-                    window.Telegram.WebApp.showAlert(JSON.stringify(e));
-                });
+            const text = document.getElementById("invoice_link").value;
+            if (text) {
+                const res = window.confirm(text);
+                console.log('Result: ', res);
             }
         }
     </script>
