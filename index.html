@@ -8,15 +8,38 @@
 </head>
 <body>
     <input type="text" id="invoice_link" value="" placeholder="Invoice link">
-    <button onclick="doVibrate()">HapticFeedback</button>
+    <button onclick="doVibrate()">HapticFeedback MIX</button>
 
     <script>
         function doVibrate() {
             window.Telegram.WebApp.HapticFeedback.notificationOccurred('success');
 
             setTimeout(() => {
-                window.Telegram.WebApp.HapticFeedback.impactOccurred('heavy');
+                window.Telegram.WebApp.HapticFeedback.impactOccurred('light');
+            }, 1000);
+            setTimeout(() => {
+                window.Telegram.WebApp.HapticFeedback.impactOccurred('medium');
             }, 2000);
+            setTimeout(() => {
+                window.Telegram.WebApp.HapticFeedback.impactOccurred('heavy');
+            }, 3000);
+            setTimeout(() => {
+                window.Telegram.WebApp.HapticFeedback.impactOccurred('rigid');
+            }, 4000);
+            setTimeout(() => {
+                window.Telegram.WebApp.HapticFeedback.impactOccurred('soft');
+            }, 5000);
+
+
+            setTimeout(() => {
+                window.Telegram.WebApp.HapticFeedback.notificationOccurred('success');
+            }, 7000);
+            setTimeout(() => {
+                window.Telegram.WebApp.HapticFeedback.notificationOccurred('error');
+            }, 8000);
+            setTimeout(() => {
+                window.Telegram.WebApp.HapticFeedback.notificationOccurred('warning');
+            }, 9000);
         }
     </script>
 </body>
