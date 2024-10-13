@@ -16,7 +16,11 @@
 
             setTimeout(() => {
                 window.Telegram.WebApp.HapticFeedback.notificationOccurred('warning');
-            }, 1000);            
+            }, 1000);
+            
+            setTimeout(() => {
+                window.Telegram.WebApp.HapticFeedback.notificationOccurred('error');
+            }, 2000);
         }
     </script>
 </body>
