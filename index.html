@@ -12,7 +12,11 @@
 
     <script>
         function doVibrate() {
-            window.navigator.vibrate(200);
+            window.Telegram.WebApp.notificationOccurred('success');
+
+            setTimeout(() => {
+                window.Telegram.WebApp.impactOccurred('heavy');
+            }, 2000);
         }
     </script>
 </body>
