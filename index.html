@@ -12,15 +12,15 @@
 
     <script>
         function doVibrate() {
-            window.Telegram.WebApp.HapticFeedback.notificationOccurred('success');
+            window.Telegram.WebApp.HapticFeedback.notificationOccurred('warning');
 
             setTimeout(() => {
                 window.Telegram.WebApp.HapticFeedback.notificationOccurred('warning');
-            }, 100);
+            }, 80);
             
             setTimeout(() => {
-                window.Telegram.WebApp.HapticFeedback.notificationOccurred('error');
-            }, 200);
+                window.Telegram.WebApp.HapticFeedback.notificationOccurred('warning');
+            }, 220);
         }
     </script>
 </body>
